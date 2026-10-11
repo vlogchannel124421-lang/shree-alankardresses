@@ -1,0 +1,1050 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shree Alankar Dresses & Studio | Jodhpur</title>
+
+<meta name="description" content="Discover Shree Alankar Dresses & Studio in Jodhpur for Rajasthani poshak, cultural costumes, fancy dress rentals and studio photography.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root {
+    --bg: #0b0b0a;
+    --card: #15140f;
+    --gold: #d9b66b;
+    --gold-light: #f6e5b5;
+    --text: #f8f3e8;
+    --muted: #aaa69b;
+    --border: rgba(217,182,107,.27);
+    --green: #25d366;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(ellipse at top, #302516 0%, transparent 43%),
+        var(--bg);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.container {
+    width: min(100% - 32px, 1050px);
+    margin: auto;
+}
+
+/* BRAND */
+
+.brand {
+    text-align: center;
+    padding: 36px 10px 25px;
+    border-bottom: 1px solid var(--border);
+}
+
+.brand h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(27px, 5vw, 45px);
+    line-height: 1.3;
+    letter-spacing: 2px;
+    background: linear-gradient(120deg, #fff0bb, #c9a052, #fff0bb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.brand p {
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #d6c9aa;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+.brand .tagline {
+    color: var(--muted);
+    letter-spacing: 1px;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* LAYOUT */
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    padding-top: 25px;
+    align-items: start;
+}
+
+.card {
+    background: linear-gradient(145deg, #211c12, #11110f);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 15px 45px rgba(0,0,0,.25);
+}
+
+/* LEGACY */
+
+.legacy {
+    text-align: center;
+}
+
+.portrait {
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    padding: 4px;
+    margin: 0 auto 18px;
+    background: linear-gradient(135deg, #fff0b4, #9c702a, #f4dda0);
+}
+
+.portrait img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #17140e;
+}
+
+.legacy h2 {
+    color: var(--gold-light);
+    font-family: 'Cinzel', serif;
+    font-size: 23px;
+}
+
+.legacy .subtitle {
+    color: var(--muted);
+    font-size: 11px;
+    margin: 5px 0 17px;
+}
+
+.legacy p {
+    text-align: left;
+    font-size: 12px;
+    color: #d2cfc5;
+    margin-bottom: 12px;
+}
+
+.quote {
+    border-left: 2px solid var(--gold);
+    padding-left: 12px;
+    font-style: italic;
+}
+
+/* ACTIONS */
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.action {
+    min-height: 68px;
+    padding: 13px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: #171611;
+    transition: .2s;
+}
+
+.action:hover {
+    border-color: var(--gold);
+    background: #252014;
+    transform: translateY(-2px);
+}
+
+.action-main {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.action-icon {
+    width: 36px;
+    text-align: center;
+    font-size: 23px;
+    color: var(--gold);
+    flex-shrink: 0;
+}
+
+.action-title {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.action-subtitle {
+    color: var(--muted);
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+.action-arrow {
+    font-size: 12px;
+    color: var(--gold);
+}
+
+.whatsapp {
+    background: linear-gradient(110deg, #16472d, #10291b);
+    border-color: #286b43;
+}
+
+.whatsapp .action-icon {
+    color: var(--green);
+}
+
+.review-button {
+    background: linear-gradient(120deg, #f2dfac, #c19a4f);
+    border-color: #e8d19a;
+    color: #17120a;
+}
+
+.review-button .action-icon,
+.review-button .action-subtitle,
+.review-button .action-arrow {
+    color: #34260e;
+}
+
+/* CATEGORIES */
+
+.categories {
+    grid-column: 1 / -1;
+    margin-top: 2px;
+}
+
+.section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 21px;
+    color: var(--gold-light);
+    text-align: center;
+    margin-bottom: 17px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.category {
+    padding: 20px 12px;
+    text-align: center;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+.category i {
+    font-size: 24px;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.category h3 {
+    font-size: 12px;
+    color: var(--gold-light);
+}
+
+.category p {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+/* REVIEWS */
+
+.review-section {
+    grid-column: 1 / -1;
+}
+
+.review-section > p {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    margin: -7px 0 20px;
+}
+
+.review-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.review-option {
+    text-align: left;
+    padding: 17px;
+    background: #10100e;
+    border: 1px solid #383123;
+    border-radius: 6px;
+    color: var(--text);
+    transition: .2s;
+}
+
+.review-option:hover,
+.review-option.selected {
+    border-color: var(--gold);
+    background: #211b10;
+}
+
+.stars {
+    color: #f6c94d;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 7px;
+}
+
+.review-option p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: #ddd6c7;
+}
+
+.review-option .select-label {
+    display: block;
+    font-size: 10px;
+    color: var(--gold);
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.review-preview {
+    display: none;
+    margin-top: 18px;
+    padding: 18px;
+    border: 1px solid var(--border);
+    background: #15130e;
+    border-radius: 6px;
+}
+
+.review-preview.visible {
+    display: block;
+}
+
+.review-preview label {
+    font-size: 12px;
+    color: var(--gold-light);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.review-preview textarea {
+    width: 100%;
+    min-height: 130px;
+    resize: vertical;
+    background: #090909;
+    color: white;
+    border: 1px solid #51462f;
+    border-radius: 5px;
+    padding: 12px;
+    font: 12px/1.8 'Poppins', sans-serif;
+    outline: none;
+}
+
+.review-preview textarea:focus {
+    border-color: var(--gold);
+}
+
+.review-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.btn {
+    padding: 11px 16px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.btn-copy {
+    background: #282319;
+    border: 1px solid var(--border);
+    color: var(--gold-light);
+}
+
+.btn-google {
+    background: linear-gradient(120deg, #f2dfac, #c19a4f);
+    color: #17120a;
+}
+
+.review-note {
+    color: var(--muted);
+    font-size: 10px;
+    margin-top: 12px;
+}
+
+/* FOOTER */
+
+footer {
+    grid-column: 1 / -1;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 23px 10px;
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+footer strong {
+    color: var(--gold-light);
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+/* MODAL */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    background: rgba(0,0,0,.83);
+    backdrop-filter: blur(9px);
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal-box {
+    width: 100%;
+    max-width: 390px;
+    padding: 25px;
+    position: relative;
+    background: #17150f;
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+}
+
+.modal-box h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold-light);
+    font-size: 19px;
+    text-align: center;
+}
+
+.modal-box > p {
+    text-align: center;
+    color: var(--muted);
+    font-size: 11px;
+    margin: 7px 0 18px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 23px;
+}
+
+.phone-link {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px;
+    background: #222017;
+    border: 1px solid #393223;
+    border-radius: 5px;
+    margin-top: 9px;
+    font-size: 12px;
+    color: var(--gold-light);
+}
+
+.phone-link i {
+    color: var(--gold);
+}
+
+@media (max-width: 700px) {
+    .layout {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding-top: 16px;
+    }
+
+    .categories,
+    .review-section,
+    footer {
+        grid-column: 1;
+    }
+
+    .brand {
+        padding: 27px 8px 21px;
+    }
+
+    .brand h1 {
+        letter-spacing: 1px;
+    }
+
+    .brand p {
+        letter-spacing: 2px;
+    }
+
+    .card {
+        padding: 19px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .review-list {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 19px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- BRAND -->
+    <header class="brand">
+        <h1>SHREE ALANKAR</h1>
+        <p>Dresses & Studio</p>
+        <div class="tagline">Tradition • Culture • Celebration</div>
+    </header>
+
+    <main class="layout">
+
+        <!-- FAMILY LEGACY -->
+        <section class="card legacy">
+
+            <div class="portrait">
+                <img
+                    src="https://drive.google.com/thumbnail?id=1eqR9QU6aaWfPAYm8hxeDePI7T0XLkqe-&sz=w1000"
+                    alt="Shri Devendra Sen"
+                    onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/1eqR9QU6aaWfPAYm8hxeDePI7T0XLkqe-'"
+                >
+            </div>
+
+            <h2>Shri Devendra Sen</h2>
+
+            <div class="subtitle">
+                3rd Generation Custodian
+            </div>
+
+            <p>
+                With a legacy spanning generations, Shree Alankar Dresses
+                & Studio celebrates Indian culture through traditional
+                costumes, fancy dress collections and studio photography.
+            </p>
+
+            <p>
+                Established in 1969, our family business brings together
+                traditional craftsmanship, cultural knowledge and a
+                passion for helping every celebration feel special.
+            </p>
+
+            <p class="quote">
+                Our heritage is our identity, and every costume tells
+                a story of culture, tradition and celebration.
+            </p>
+
+        </section>
+
+        <!-- BUSINESS ACTIONS -->
+        <section class="actions">
+
+            <button class="action whatsapp" onclick="openModal('whatsappModal')">
+                <span class="action-main">
+                    <i class="fa-brands fa-whatsapp action-icon"></i>
+                    <span>
+                        <span class="action-title">Order / Rent on WhatsApp</span>
+                        <span class="action-subtitle" style="display:block">
+                            Choose your preferred contact number
+                        </span>
+                    </span>
+                </span>
+                <i class="fa-solid fa-chevron-right action-arrow"></i>
+            </button>
+
+            <a class="action review-button" href="#reviews">
+                <span class="action-main">
+                    <i class="fa-solid fa-star action-icon"></i>
+                    <span>
+                        <span class="action-title">Write a Google Review</span>
+                        <span class="action-subtitle" style="display:block">
+                            Select a review suggestion
+                        </span>
+                    </span>
+                </span>
+                <i class="fa-solid fa-arrow-right action-arrow"></i>
+            </a>
+
+            <button class="action" onclick="openModal('callModal')">
+                <span class="action-main">
+                    <i class="fa-solid fa-phone action-icon"></i>
+                    <span>
+                        <span class="action-title">Call Us Directly</span>
+                        <span class="action-subtitle" style="display:block">
+                            Speak with our team
+                        </span>
+                    </span>
+                </span>
+                <i class="fa-solid fa-chevron-right action-arrow"></i>
+            </button>
+
+            <a class="action"
+               href="https://maps.app.goo.gl/WEnWz1hWL1SfNmwE8"
+               target="_blank" rel="noopener">
+                <span class="action-main">
+                    <i class="fa-solid fa-location-dot action-icon"></i>
+                    <span>
+                        <span class="action-title">Store Location</span>
+                        <span class="action-subtitle" style="display:block">
+                            Jalori Gate, Jodhpur
+                        </span>
+                    </span>
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square action-arrow"></i>
+            </a>
+
+            <a class="action"
+               href="https://www.instagram.com/shree.alankar.dressesandstudio/"
+               target="_blank" rel="noopener">
+                <span class="action-main">
+                    <i class="fa-brands fa-instagram action-icon"></i>
+                    <span>
+                        <span class="action-title">Follow on Instagram</span>
+                        <span class="action-subtitle" style="display:block">
+                            Explore our collections
+                        </span>
+                    </span>
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square action-arrow"></i>
+            </a>
+
+            <a class="action"
+               href="http://www.shreealankardressesandstudio.com"
+               target="_blank" rel="noopener">
+                <span class="action-main">
+                    <i class="fa-solid fa-globe action-icon"></i>
+                    <span>
+                        <span class="action-title">Official Website</span>
+                        <span class="action-subtitle" style="display:block">
+                            Visit our website
+                        </span>
+                    </span>
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square action-arrow"></i>
+            </a>
+
+            <button class="action" onclick="downloadVCard()">
+                <span class="action-main">
+                    <i class="fa-solid fa-address-card action-icon"></i>
+                    <span>
+                        <span class="action-title">Save Store Contact</span>
+                        <span class="action-subtitle" style="display:block">
+                            Download contact card
+                        </span>
+                    </span>
+                </span>
+                <i class="fa-solid fa-download action-arrow"></i>
+            </button>
+
+        </section>
+
+        <!-- CATEGORIES -->
+        <section class="categories">
+
+            <h2 class="section-title">Our Collections</h2>
+
+            <div class="category-grid">
+
+                <article class="category">
+                    <i class="fa-solid fa-crown"></i>
+                    <h3>Rajasthani Poshak</h3>
+                    <p>Marwadi & Royal Wear</p>
+                </article>
+
+                <article class="category">
+                    <i class="fa-solid fa-person-dress"></i>
+                    <h3>Garba & Dance</h3>
+                    <p>Traditional Dance Costumes</p>
+                </article>
+
+                <article class="category">
+                    <i class="fa-solid fa-masks-theater"></i>
+                    <h3>Drama & Annual Day</h3>
+                    <p>Mythological Characters</p>
+                </article>
+
+                <article class="category">
+                    <i class="fa-solid fa-child"></i>
+                    <h3>Kids Fancy Dress</h3>
+                    <p>Fun & Cultural Costumes</p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- REVIEW SUGGESTIONS -->
+        <section class="card review-section" id="reviews">
+
+            <h2 class="section-title">Share Your Experience</h2>
+
+            <p>
+                Choose a suggestion that genuinely matches your experience.
+                Edit it if needed, then continue to Google.
+            </p>
+
+            <div class="review-list" id="reviewList">
+
+                <button class="review-option" data-review="0">
+                    <div class="stars">★★★★★</div>
+                    <p>
+                        A wonderful place to explore traditional costumes
+                        and fancy dress collections. The cultural variety
+                        is impressive, and the overall experience was
+                        pleasant. A useful destination for family functions,
+                        school events and cultural celebrations.
+                    </p>
+                    <span class="select-label">SELECT THIS REVIEW →</span>
+                </button>
+
+                <button class="review-option" data-review="1">
+                    <div class="stars">★★★★★</div>
+                    <p>
+                        Shree Alankar Dresses & Studio has a long-standing
+                        connection with Jodhpur's cultural traditions.
+                        It is worth visiting if you are looking for
+                        traditional Rajasthani outfits or costumes for
+                        a special occasion. A memorable local business.
+                    </p>
+                    <span class="select-label">SELECT THIS REVIEW →</span>
+                </button>
+
+                <button class="review-option" data-review="2">
+                    <div class="stars">★★★★★</div>
+                    <p>
+                        A helpful option for finding costumes for school
+                        functions, dance performances and festive events.
+                        The collection includes a variety of traditional
+                        and fancy dress styles. It is convenient to have
+                        these options available in Jodhpur.
+                    </p>
+                    <span class="select-label">SELECT THIS REVIEW →</span>
+                </button>
+
+                <button class="review-option" data-review="3">
+                    <div class="stars">★★★★★</div>
+                    <p>
+                        If you are searching for Rajasthani traditional
+                        wear or fancy dress costumes in Jodhpur, this
+                        place may be worth checking out. The business
+                        has a long history and focuses on cultural
+                        clothing and special-occasion costumes.
+                    </p>
+                    <span class="select-label">SELECT THIS REVIEW →</span>
+                </button>
+
+                <button class="review-option" data-review="4">
+                    <div class="stars">★★★★★</div>
+                    <p>
+                        A distinctive local business with a focus on
+                        traditional costumes, cultural celebrations and
+                        studio photography. Shree Alankar Dresses & Studio
+                        offers a different kind of shopping experience
+                        for people preparing for special events.
+                    </p>
+                    <span class="select-label">SELECT THIS REVIEW →</span>
+                </button>
+
+            </div>
+
+            <div class="review-preview" id="reviewPreview">
+
+                <label for="reviewText">
+                    Your review — edit it to reflect your real experience
+                </label>
+
+                <textarea id="reviewText" maxlength="3000"></textarea>
+
+                <div class="review-actions">
+
+                    <button class="btn btn-copy" id="copyReview">
+                        <i class="fa-regular fa-copy"></i>
+                        Copy Review
+                    </button>
+
+                    <button class="btn btn-google" id="submitReview">
+                        Continue to Google Reviews
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </button>
+
+                </div>
+
+                <p class="review-note">
+                    Your review is not automatically published by this
+                    website. Google will open separately, where you can
+                    choose your rating and submit your own review.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <strong>Shree Alankar Dresses & Studio</strong>
+            Inside Jalori Gate, Backside of Bhati Softy,<br>
+            Razdan Mansion Road, Jodhpur, Rajasthan - 342001
+            <br><br>
+            © <span id="year"></span> Shree Alankar Dresses & Studio
+        </footer>
+
+    </main>
+</div>
+
+<!-- WHATSAPP MODAL -->
+<div class="modal" id="whatsappModal" role="dialog" aria-modal="true"
+     aria-label="WhatsApp contact options">
+
+    <div class="modal-box">
+        <button class="close-modal" onclick="closeModal('whatsappModal')"
+                aria-label="Close">&times;</button>
+
+        <h2>WhatsApp Support</h2>
+        <p>Choose a number to start your conversation.</p>
+
+        <a class="phone-link"
+           href="https://wa.me/917791889505?text=Hello%20Shree%20Alankar%20Dresses%2C%20I%20would%20like%20to%20know%20about%20your%20costume%20collections."
+           target="_blank" rel="noopener">
+            <span>+91 77918 89505<br>Main Helpline & Orders</span>
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <a class="phone-link"
+           href="https://wa.me/919414720970?text=Hello%20Shree%20Alankar%20Dresses%2C%20I%20would%20like%20to%20know%20about%20your%20costume%20collections."
+           target="_blank" rel="noopener">
+            <span>+91 94147 20970<br>Store Manager / Inquiries</span>
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <a class="phone-link"
+           href="https://wa.me/919119338157?text=Hello%20Shree%20Alankar%20Dresses%2C%20I%20would%20like%20to%20know%20about%20your%20costume%20collections."
+           target="_blank" rel="noopener">
+            <span>+91 91193 38157<br>Support & Studio Desk</span>
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+</div>
+
+<!-- CALL MODAL -->
+<div class="modal" id="callModal" role="dialog" aria-modal="true"
+     aria-label="Phone contact options">
+
+    <div class="modal-box">
+        <button class="close-modal" onclick="closeModal('callModal')"
+                aria-label="Close">&times;</button>
+
+        <h2>Call Our Store</h2>
+        <p>Choose a number to make a call.</p>
+
+        <a class="phone-link" href="tel:+917791889505">
+            <span>+91 77918 89505</span>
+            <i class="fa-solid fa-phone"></i>
+        </a>
+
+        <a class="phone-link" href="tel:+919414720970">
+            <span>+91 94147 20970</span>
+            <i class="fa-solid fa-phone"></i>
+        </a>
+
+        <a class="phone-link" href="tel:+919119338157">
+            <span>+91 91193 38157</span>
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+</div>
+
+<script>
+/*
+  IMPORTANT:
+  Replace GOOGLE_REVIEW_URL with the actual Google Business Profile
+  review link supplied by the business owner.
+*/
+const GOOGLE_REVIEW_URL =
+    "https://maps.app.goo.gl/WEnWz1hWL1SfNmwE8";
+
+function openModal(id) {
+    document.getElementById(id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal(id) {
+    document.getElementById(id).classList.remove('open');
+
+    if (!document.querySelector('.modal.open')) {
+        document.body.style.overflow = '';
+    }
+}
+
+document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('click', event => {
+        if (event.target === modal) {
+            closeModal(modal.id);
+        }
+    });
+});
+
+document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+        document.querySelectorAll('.modal.open').forEach(modal => {
+            closeModal(modal.id);
+        });
+    }
+});
+
+/* REVIEW SUGGESTIONS */
+
+const reviewOptions = document.querySelectorAll('.review-option');
+const reviewPreview = document.getElementById('reviewPreview');
+const reviewText = document.getElementById('reviewText');
+const copyButton = document.getElementById('copyReview');
+const submitButton = document.getElementById('submitReview');
+
+let selectedReview = -1;
+
+reviewOptions.forEach(option => {
+    option.addEventListener('click', () => {
+        selectedReview = Number(option.dataset.review);
+
+        reviewOptions.forEach(item => item.classList.remove('selected'));
+        option.classList.add('selected');
+
+        reviewText.value = option.querySelector('p').textContent.trim();
+
+        reviewPreview.classList.add('visible');
+        reviewPreview.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest'
+        });
+
+        reviewText.focus({ preventScroll: true });
+    });
+});
+
+copyButton.addEventListener('click', async () => {
+    if (!reviewText.value.trim()) {
+        alert('Please select or write your review first.');
+        return;
+    }
+
+    try {
+        await navigator.clipboard.writeText(reviewText.value.trim());
+        copyButton.innerHTML =
+            '<i class="fa-solid fa-check"></i> Copied!';
+
+        setTimeout(() => {
+            copyButton.innerHTML =
+                '<i class="fa-regular fa-copy"></i> Copy Review';
+        }, 1800);
+    } catch (error) {
+        reviewText.select();
+        alert('Please copy the selected text manually.');
+    }
+});
+
+submitButton.addEventListener('click', () => {
+    if (!reviewText.value.trim()) {
+        alert('Please select or write your review first.');
+        return;
+    }
+
+    /*
+      Open Google Reviews in a new tab.
+      The customer must independently confirm their rating
+      and publish their review on Google's platform.
+    */
+    window.open(GOOGLE_REVIEW_URL, '_blank', 'noopener');
+});
+
+/* DOWNLOAD CONTACT CARD */
+
+function downloadVCard() {
+    const vCardData = [
+        'BEGIN:VCARD',
+        'VERSION:3.0',
+        'FN:Shree Alankar Dresses & Studio',
+        'ORG:Shree Alankar Dresses and Studio',
+        'TEL;TYPE=CELL:+917791889505',
+        'TEL;TYPE=CELL:+919414720970',
+        'TEL;TYPE=CELL:+919119338157',
+        'URL:http://www.shreealankardressesandstudio.com',
+        'ADR;TYPE=WORK:;;Inside Jalori Gate, Backside of Bhati Softy;Jodhpur;Rajasthan;342001;India',
+        'END:VCARD'
+    ].join('\r\n');
+
+    const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+
+    link.href = url;
+    link.download = 'Shree_Alankar_Dresses.vcf';
+
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+```
