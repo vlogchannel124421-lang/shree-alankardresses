@@ -9,7 +9,11 @@
 
 <meta name="description" content="Discover Shree Alankar Dresses & Studio in Jodhpur for Rajasthani poshak, cultural costumes, fancy dress rentals and studio photography.">
 
+<meta name="theme-color" content="#0b0b0a">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -34,6 +38,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 20px;
 }
 
 body {
@@ -60,6 +65,13 @@ button {
     cursor: pointer;
 }
 
+button:focus-visible,
+a:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--gold-light);
+    outline-offset: 3px;
+}
+
 .container {
     width: min(100% - 32px, 1050px);
     margin: auto;
@@ -80,6 +92,7 @@ button {
     letter-spacing: 2px;
     background: linear-gradient(120deg, #fff0bb, #c9a052, #fff0bb);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -116,7 +129,7 @@ button {
     box-shadow: 0 15px 45px rgba(0,0,0,.25);
 }
 
-/* LEGACY */
+/* FAMILY LEGACY */
 
 .legacy {
     text-align: center;
@@ -173,6 +186,7 @@ button {
 }
 
 .action {
+    width: 100%;
     min-height: 68px;
     padding: 13px 15px;
     display: flex;
@@ -182,7 +196,9 @@ button {
     border: 1px solid var(--border);
     border-radius: 6px;
     background: #171611;
-    transition: .2s;
+    color: var(--text);
+    text-align: left;
+    transition: background .2s, border-color .2s, transform .2s;
 }
 
 .action:hover {
@@ -195,6 +211,7 @@ button {
     display: flex;
     align-items: center;
     gap: 13px;
+    min-width: 0;
 }
 
 .action-icon {
@@ -206,11 +223,13 @@ button {
 }
 
 .action-title {
+    display: block;
     font-size: 13px;
     font-weight: 600;
 }
 
 .action-subtitle {
+    display: block;
     color: var(--muted);
     font-size: 10px;
     margin-top: 2px;
@@ -219,6 +238,7 @@ button {
 .action-arrow {
     font-size: 12px;
     color: var(--gold);
+    flex-shrink: 0;
 }
 
 .whatsapp {
@@ -269,6 +289,12 @@ button {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 6px;
+    transition: border-color .2s, transform .2s;
+}
+
+.category:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
 }
 
 .category i {
@@ -288,7 +314,7 @@ button {
     margin-top: 5px;
 }
 
-/* REVIEWS */
+/* REVIEW SECTION */
 
 .review-section {
     grid-column: 1 / -1;
@@ -301,6 +327,15 @@ button {
     margin: -7px 0 20px;
 }
 
+.review-count {
+    color: var(--gold);
+    font-size: 11px;
+    text-align: center;
+    margin: -8px 0 18px;
+}
+
+/* Ten review suggestions */
+
 .review-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -308,46 +343,69 @@ button {
 }
 
 .review-option {
+    width: 100%;
+    min-width: 0;
     text-align: left;
     padding: 17px;
     background: #10100e;
     border: 1px solid #383123;
     border-radius: 6px;
     color: var(--text);
-    transition: .2s;
+    transition: border-color .2s, background .2s, transform .2s;
 }
 
-.review-option:hover,
-.review-option.selected {
+.review-option:hover {
     border-color: var(--gold);
     background: #211b10;
+    transform: translateY(-2px);
 }
 
-.stars {
-    color: #f6c94d;
-    font-size: 14px;
-    letter-spacing: 2px;
-    margin-bottom: 7px;
+.review-option.selected {
+    border-color: var(--gold);
+    background: linear-gradient(145deg, #2a2111, #15130e);
+    box-shadow: inset 0 0 0 1px rgba(217,182,107,.12);
+}
+
+.review-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 25px;
+    height: 25px;
+    padding: 0 6px;
+    margin-bottom: 9px;
+    border-radius: 4px;
+    background: #292216;
+    border: 1px solid var(--border);
+    color: var(--gold-light);
+    font-size: 10px;
+    font-weight: 600;
 }
 
 .review-option p {
     font-size: 12px;
     line-height: 1.8;
     color: #ddd6c7;
+    overflow-wrap: anywhere;
 }
 
 .review-option .select-label {
     display: block;
     font-size: 10px;
     color: var(--gold);
-    margin-top: 10px;
+    margin-top: 12px;
     font-weight: 600;
+    letter-spacing: .3px;
+}
+
+.review-option.selected .select-label {
+    color: var(--gold-light);
 }
 
 .review-preview {
     display: none;
-    margin-top: 18px;
-    padding: 18px;
+    margin-top: 20px;
+    padding: 19px;
     border: 1px solid var(--border);
     background: #15130e;
     border-radius: 6px;
@@ -355,6 +413,31 @@ button {
 
 .review-preview.visible {
     display: block;
+    animation: previewIn .25s ease;
+}
+
+@keyframes previewIn {
+    from {
+        opacity: 0;
+        transform: translateY(7px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.review-preview h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold-light);
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.review-preview .preview-description {
+    color: var(--muted);
+    font-size: 11px;
+    margin-bottom: 14px;
 }
 
 .review-preview label {
@@ -366,7 +449,7 @@ button {
 
 .review-preview textarea {
     width: 100%;
-    min-height: 130px;
+    min-height: 135px;
     resize: vertical;
     background: #090909;
     color: white;
@@ -389,11 +472,22 @@ button {
 }
 
 .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 43px;
     padding: 11px 16px;
     border: 0;
     border-radius: 5px;
     font-size: 12px;
     font-weight: 600;
+    transition: filter .2s, transform .2s;
+}
+
+.btn:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
 }
 
 .btn-copy {
@@ -411,6 +505,14 @@ button {
     color: var(--muted);
     font-size: 10px;
     margin-top: 12px;
+    line-height: 1.8;
+}
+
+.review-status {
+    min-height: 18px;
+    color: var(--gold-light);
+    font-size: 11px;
+    margin-top: 9px;
 }
 
 /* FOOTER */
@@ -432,7 +534,7 @@ footer strong {
     margin-bottom: 5px;
 }
 
-/* MODAL */
+/* MODALS */
 
 .modal {
     position: fixed;
@@ -453,6 +555,8 @@ footer strong {
 .modal-box {
     width: 100%;
     max-width: 390px;
+    max-height: 85vh;
+    overflow-y: auto;
     padding: 25px;
     position: relative;
     background: #17150f;
@@ -465,6 +569,7 @@ footer strong {
     color: var(--gold-light);
     font-size: 19px;
     text-align: center;
+    padding: 0 12px;
 }
 
 .modal-box > p {
@@ -482,11 +587,15 @@ footer strong {
     border: none;
     color: white;
     font-size: 23px;
+    line-height: 1;
+    padding: 3px 7px;
 }
 
 .phone-link {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    gap: 12px;
     padding: 14px;
     background: #222017;
     border: 1px solid #393223;
@@ -494,13 +603,24 @@ footer strong {
     margin-top: 9px;
     font-size: 12px;
     color: var(--gold-light);
+    transition: border-color .2s;
+}
+
+.phone-link:hover {
+    border-color: var(--gold);
 }
 
 .phone-link i {
     color: var(--gold);
+    font-size: 18px;
+    flex-shrink: 0;
 }
 
 @media (max-width: 700px) {
+    .container {
+        width: min(100% - 24px, 540px);
+    }
+
     .layout {
         grid-template-columns: 1fr;
         gap: 15px;
@@ -540,6 +660,27 @@ footer strong {
     .section-title {
         font-size: 19px;
     }
+
+    .review-actions {
+        flex-direction: column;
+    }
+
+    .review-actions .btn {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
 }
 </style>
 </head>
@@ -549,15 +690,17 @@ footer strong {
 <div class="container">
 
     <!-- BRAND -->
+
     <header class="brand">
         <h1>SHREE ALANKAR</h1>
-        <p>Dresses & Studio</p>
+        <p>Dresses &amp; Studio</p>
         <div class="tagline">Tradition • Culture • Celebration</div>
     </header>
 
     <main class="layout">
 
         <!-- FAMILY LEGACY -->
+
         <section class="card legacy">
 
             <div class="portrait">
@@ -576,7 +719,7 @@ footer strong {
 
             <p>
                 With a legacy spanning generations, Shree Alankar Dresses
-                & Studio celebrates Indian culture through traditional
+                &amp; Studio celebrates Indian culture through traditional
                 costumes, fancy dress collections and studio photography.
             </p>
 
@@ -594,108 +737,153 @@ footer strong {
         </section>
 
         <!-- BUSINESS ACTIONS -->
-        <section class="actions">
 
-            <button class="action whatsapp" onclick="openModal('whatsappModal')">
+        <section class="actions" aria-label="Business contact options">
+
+            <button class="action whatsapp" type="button"
+                    onclick="openModal('whatsappModal')">
+
                 <span class="action-main">
-                    <i class="fa-brands fa-whatsapp action-icon"></i>
+                    <i class="fa-brands fa-whatsapp action-icon"
+                       aria-hidden="true"></i>
+
                     <span>
-                        <span class="action-title">Order / Rent on WhatsApp</span>
-                        <span class="action-subtitle" style="display:block">
+                        <span class="action-title">
+                            Order / Rent on WhatsApp
+                        </span>
+
+                        <span class="action-subtitle">
                             Choose your preferred contact number
                         </span>
                     </span>
                 </span>
-                <i class="fa-solid fa-chevron-right action-arrow"></i>
+
+                <i class="fa-solid fa-chevron-right action-arrow"
+                   aria-hidden="true"></i>
             </button>
 
             <a class="action review-button" href="#reviews">
+
                 <span class="action-main">
-                    <i class="fa-solid fa-star action-icon"></i>
+                    <i class="fa-solid fa-star action-icon"
+                       aria-hidden="true"></i>
+
                     <span>
-                        <span class="action-title">Write a Google Review</span>
-                        <span class="action-subtitle" style="display:block">
-                            Select a review suggestion
+                        <span class="action-title">
+                            Write a Google Review
+                        </span>
+
+                        <span class="action-subtitle">
+                            Choose from 10 suggestions
                         </span>
                     </span>
                 </span>
-                <i class="fa-solid fa-arrow-right action-arrow"></i>
+
+                <i class="fa-solid fa-arrow-right action-arrow"
+                   aria-hidden="true"></i>
             </a>
 
-            <button class="action" onclick="openModal('callModal')">
+            <button class="action" type="button"
+                    onclick="openModal('callModal')">
+
                 <span class="action-main">
-                    <i class="fa-solid fa-phone action-icon"></i>
+                    <i class="fa-solid fa-phone action-icon"
+                       aria-hidden="true"></i>
+
                     <span>
                         <span class="action-title">Call Us Directly</span>
-                        <span class="action-subtitle" style="display:block">
+                        <span class="action-subtitle">
                             Speak with our team
                         </span>
                     </span>
                 </span>
-                <i class="fa-solid fa-chevron-right action-arrow"></i>
+
+                <i class="fa-solid fa-chevron-right action-arrow"
+                   aria-hidden="true"></i>
             </button>
 
             <a class="action"
                href="https://maps.app.goo.gl/WEnWz1hWL1SfNmwE8"
-               target="_blank" rel="noopener">
+               target="_blank" rel="noopener noreferrer">
+
                 <span class="action-main">
-                    <i class="fa-solid fa-location-dot action-icon"></i>
+                    <i class="fa-solid fa-location-dot action-icon"
+                       aria-hidden="true"></i>
+
                     <span>
                         <span class="action-title">Store Location</span>
-                        <span class="action-subtitle" style="display:block">
+                        <span class="action-subtitle">
                             Jalori Gate, Jodhpur
                         </span>
                     </span>
                 </span>
-                <i class="fa-solid fa-arrow-up-right-from-square action-arrow"></i>
+
+                <i class="fa-solid fa-arrow-up-right-from-square action-arrow"
+                   aria-hidden="true"></i>
             </a>
 
             <a class="action"
                href="https://www.instagram.com/shree.alankar.dressesandstudio/"
-               target="_blank" rel="noopener">
+               target="_blank" rel="noopener noreferrer">
+
                 <span class="action-main">
-                    <i class="fa-brands fa-instagram action-icon"></i>
+                    <i class="fa-brands fa-instagram action-icon"
+                       aria-hidden="true"></i>
+
                     <span>
                         <span class="action-title">Follow on Instagram</span>
-                        <span class="action-subtitle" style="display:block">
+                        <span class="action-subtitle">
                             Explore our collections
                         </span>
                     </span>
                 </span>
-                <i class="fa-solid fa-arrow-up-right-from-square action-arrow"></i>
+
+                <i class="fa-solid fa-arrow-up-right-from-square action-arrow"
+                   aria-hidden="true"></i>
             </a>
 
             <a class="action"
                href="http://www.shreealankardressesandstudio.com"
-               target="_blank" rel="noopener">
+               target="_blank" rel="noopener noreferrer">
+
                 <span class="action-main">
-                    <i class="fa-solid fa-globe action-icon"></i>
+                    <i class="fa-solid fa-globe action-icon"
+                       aria-hidden="true"></i>
+
                     <span>
                         <span class="action-title">Official Website</span>
-                        <span class="action-subtitle" style="display:block">
+                        <span class="action-subtitle">
                             Visit our website
                         </span>
                     </span>
                 </span>
-                <i class="fa-solid fa-arrow-up-right-from-square action-arrow"></i>
+
+                <i class="fa-solid fa-arrow-up-right-from-square action-arrow"
+                   aria-hidden="true"></i>
             </a>
 
-            <button class="action" onclick="downloadVCard()">
+            <button class="action" type="button" onclick="downloadVCard()">
+
                 <span class="action-main">
-                    <i class="fa-solid fa-address-card action-icon"></i>
+                    <i class="fa-solid fa-address-card action-icon"
+                       aria-hidden="true"></i>
+
                     <span>
                         <span class="action-title">Save Store Contact</span>
-                        <span class="action-subtitle" style="display:block">
+                        <span class="action-subtitle">
                             Download contact card
                         </span>
                     </span>
                 </span>
-                <i class="fa-solid fa-download action-arrow"></i>
+
+                <i class="fa-solid fa-download action-arrow"
+                   aria-hidden="true"></i>
             </button>
 
         </section>
 
-        <!-- CATEGORIES -->
+        <!-- COLLECTIONS -->
+
         <section class="categories">
 
             <h2 class="section-title">Our Collections</h2>
@@ -703,133 +891,237 @@ footer strong {
             <div class="category-grid">
 
                 <article class="category">
-                    <i class="fa-solid fa-crown"></i>
+                    <i class="fa-solid fa-crown" aria-hidden="true"></i>
                     <h3>Rajasthani Poshak</h3>
-                    <p>Marwadi & Royal Wear</p>
+                    <p>Marwadi &amp; Royal Wear</p>
                 </article>
 
                 <article class="category">
-                    <i class="fa-solid fa-person-dress"></i>
-                    <h3>Garba & Dance</h3>
+                    <i class="fa-solid fa-person-dress"
+                       aria-hidden="true"></i>
+                    <h3>Garba &amp; Dance</h3>
                     <p>Traditional Dance Costumes</p>
                 </article>
 
                 <article class="category">
-                    <i class="fa-solid fa-masks-theater"></i>
-                    <h3>Drama & Annual Day</h3>
+                    <i class="fa-solid fa-masks-theater"
+                       aria-hidden="true"></i>
+                    <h3>Drama &amp; Annual Day</h3>
                     <p>Mythological Characters</p>
                 </article>
 
                 <article class="category">
-                    <i class="fa-solid fa-child"></i>
+                    <i class="fa-solid fa-child" aria-hidden="true"></i>
                     <h3>Kids Fancy Dress</h3>
-                    <p>Fun & Cultural Costumes</p>
+                    <p>Fun &amp; Cultural Costumes</p>
                 </article>
 
             </div>
 
         </section>
 
-        <!-- REVIEW SUGGESTIONS -->
+        <!-- 10 REVIEW SUGGESTIONS -->
+
         <section class="card review-section" id="reviews">
 
             <h2 class="section-title">Share Your Experience</h2>
 
             <p>
-                Choose a suggestion that genuinely matches your experience.
-                Edit it if needed, then continue to Google.
+                Choose a suggestion that matches your genuine experience.
+                Edit the text to make it your own before continuing to Google.
             </p>
+
+            <div class="review-count">
+                10 REVIEW SUGGESTIONS AVAILABLE
+            </div>
 
             <div class="review-list" id="reviewList">
 
-                <button class="review-option" data-review="0">
-                    <div class="stars">★★★★★</div>
-                    <p>
-                        A wonderful place to explore traditional costumes
-                        and fancy dress collections. The cultural variety
-                        is impressive, and the overall experience was
-                        pleasant. A useful destination for family functions,
-                        school events and cultural celebrations.
-                    </p>
-                    <span class="select-label">SELECT THIS REVIEW →</span>
+                <!-- REVIEW 1 -->
+
+                <button class="review-option"
+                        type="button" data-review="0"
+                        aria-pressed="false">
+
+                    <span class="review-number">01</span>
+
+                    <p>Beautiful collection and a lovely shopping experience! Loved exploring the designs here. ✨❤️</p>
+
+                    <span class="select-label">USE THIS SUGGESTION →</span>
                 </button>
 
-                <button class="review-option" data-review="1">
-                    <div class="stars">★★★★★</div>
-                    <p>
-                        Shree Alankar Dresses & Studio has a long-standing
-                        connection with Jodhpur's cultural traditions.
-                        It is worth visiting if you are looking for
-                        traditional Rajasthani outfits or costumes for
-                        a special occasion. A memorable local business.
-                    </p>
-                    <span class="select-label">SELECT THIS REVIEW →</span>
+                <!-- REVIEW 2 -->
+
+                <button class="review-option"
+                        type="button" data-review="1"
+                        aria-pressed="false">
+
+                    <span class="review-number">02</span>
+
+                    <p>Really nice variety of dresses and traditional outfits. Worth visiting! 👗😍</p>
+
+                    <span class="select-label">USE THIS SUGGESTION →</span>
                 </button>
 
-                <button class="review-option" data-review="2">
-                    <div class="stars">★★★★★</div>
-                    <p>
-                        A helpful option for finding costumes for school
-                        functions, dance performances and festive events.
-                        The collection includes a variety of traditional
-                        and fancy dress styles. It is convenient to have
-                        these options available in Jodhpur.
-                    </p>
-                    <span class="select-label">SELECT THIS REVIEW →</span>
+                <!-- REVIEW 3 -->
+
+                <button class="review-option"
+                        type="button" data-review="2"
+                        aria-pressed="false">
+
+                    <span class="review-number">03</span>
+
+                    <p>Had a good experience here. The collection has some lovely designs for different occasions. 🌸💖</p>
+
+                    <span class="select-label">USE THIS SUGGESTION →</span>
                 </button>
 
-                <button class="review-option" data-review="3">
-                    <div class="stars">★★★★★</div>
-                    <p>
-                        If you are searching for Rajasthani traditional
-                        wear or fancy dress costumes in Jodhpur, this
-                        place may be worth checking out. The business
-                        has a long history and focuses on cultural
-                        clothing and special-occasion costumes.
-                    </p>
-                    <span class="select-label">SELECT THIS REVIEW →</span>
+                <!-- REVIEW 4 -->
+
+                <button class="review-option"
+                        type="button" data-review="3"
+                        aria-pressed="false">
+
+                    <span class="review-number">04</span>
+
+                    <p>Loved the outfit options available here. Found some beautiful styles to explore! 🛍️✨</p>
+
+                    <span class="select-label">USE THIS SUGGESTION →</span>
                 </button>
 
-                <button class="review-option" data-review="4">
-                    <div class="stars">★★★★★</div>
-                    <p>
-                        A distinctive local business with a focus on
-                        traditional costumes, cultural celebrations and
-                        studio photography. Shree Alankar Dresses & Studio
-                        offers a different kind of shopping experience
-                        for people preparing for special events.
-                    </p>
-                    <span class="select-label">SELECT THIS REVIEW →</span>
+                <!-- REVIEW 5 -->
+
+                <button class="review-option"
+                        type="button" data-review="4"
+                        aria-pressed="false">
+
+                    <span class="review-number">05</span>
+
+                    <p>A nice place to check out traditional and occasion-wear dresses in Jodhpur. ❤️😊</p>
+
+                    <span class="select-label">USE THIS SUGGESTION →</span>
+                </button>
+
+                <!-- REVIEW 6 -->
+
+                <button class="review-option"
+                        type="button" data-review="5"
+                        aria-pressed="false">
+
+                    <span class="review-number">06</span>
+
+                    <p>Beautiful designs and a lovely collection. Definitely worth checking out! 👗🌷</p>
+
+                    <span class="select-label">USE THIS SUGGESTION →</span>
+                </button>
+
+                <!-- REVIEW 7 -->
+
+                <button class="review-option"
+                        type="button" data-review="6"
+                        aria-pressed="false">
+
+                    <span class="review-number">07</span>
+
+                    <p>Had a pleasant visit. There are plenty of styles to explore for special occasions. ✨💕</p>
+
+                    <span class="select-label">USE THIS SUGGESTION →</span>
+                </button>
+
+                <!-- REVIEW 8 -->
+
+                <button class="review-option"
+                        type="button" data-review="7"
+                        aria-pressed="false">
+
+                    <span class="review-number">08</span>
+
+                    <p>Loved browsing through the collection. Some really attractive outfit options available here! 😍🌸</p>
+
+                    <span class="select-label">USE THIS SUGGESTION →</span>
+                </button>
+
+                <!-- REVIEW 9 -->
+
+                <button class="review-option"
+                        type="button" data-review="8"
+                        aria-pressed="false">
+
+                    <span class="review-number">09</span>
+
+                    <p>A good place for anyone looking for beautiful dresses and traditional outfits. 🛍️❤️</p>
+
+                    <span class="select-label">USE THIS SUGGESTION →</span>
+                </button>
+
+                <!-- REVIEW 10 -->
+
+                <button class="review-option"
+                        type="button" data-review="9"
+                        aria-pressed="false">
+
+                    <span class="review-number">10</span>
+
+                    <p>Nice collection with a variety of designs to explore. Had a pleasant shopping experience! 😊✨</p>
+
+                    <span class="select-label">USE THIS SUGGESTION →</span>
                 </button>
 
             </div>
 
-            <div class="review-preview" id="reviewPreview">
+            <!-- SELECTED REVIEW PREVIEW -->
+
+            <div class="review-preview"
+                 id="reviewPreview"
+                 aria-live="polite">
+
+                <h3>Your Review</h3>
+
+                <p class="preview-description">
+                    Personalize this suggestion to reflect your own visit.
+                </p>
 
                 <label for="reviewText">
-                    Your review — edit it to reflect your real experience
+                    Review text — editable
                 </label>
 
-                <textarea id="reviewText" maxlength="3000"></textarea>
+                <textarea
+                    id="reviewText"
+                    maxlength="3000"
+                    placeholder="Select a review suggestion above or write about your own experience."
+                ></textarea>
 
                 <div class="review-actions">
 
-                    <button class="btn btn-copy" id="copyReview">
-                        <i class="fa-regular fa-copy"></i>
+                    <button class="btn btn-copy"
+                            type="button" id="copyReview">
+
+                        <i class="fa-regular fa-copy"
+                           aria-hidden="true"></i>
+
                         Copy Review
                     </button>
 
-                    <button class="btn btn-google" id="submitReview">
+                    <button class="btn btn-google"
+                            type="button" id="submitReview">
+
                         Continue to Google Reviews
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                        <i class="fa-solid fa-arrow-up-right-from-square"
+                           aria-hidden="true"></i>
                     </button>
 
                 </div>
 
+                <p class="review-status"
+                   id="reviewStatus"
+                   role="status"
+                   aria-live="polite"></p>
+
                 <p class="review-note">
-                    Your review is not automatically published by this
-                    website. Google will open separately, where you can
-                    choose your rating and submit your own review.
+                    Your review is not automatically published by this website.
+                    Google opens separately, where you can choose your own
+                    rating and decide whether to publish your review.
                 </p>
 
             </div>
@@ -837,184 +1129,375 @@ footer strong {
         </section>
 
         <!-- FOOTER -->
+
         <footer>
-            <strong>Shree Alankar Dresses & Studio</strong>
+
+            <strong>Shree Alankar Dresses &amp; Studio</strong>
+
             Inside Jalori Gate, Backside of Bhati Softy,<br>
             Razdan Mansion Road, Jodhpur, Rajasthan - 342001
+
             <br><br>
-            © <span id="year"></span> Shree Alankar Dresses & Studio
+
+            © <span id="year"></span> Shree Alankar Dresses &amp; Studio
+
         </footer>
 
     </main>
+
 </div>
 
 <!-- WHATSAPP MODAL -->
-<div class="modal" id="whatsappModal" role="dialog" aria-modal="true"
-     aria-label="WhatsApp contact options">
+
+<div class="modal"
+     id="whatsappModal"
+     role="dialog"
+     aria-modal="true"
+     aria-label="WhatsApp contact options"
+     aria-hidden="true">
 
     <div class="modal-box">
-        <button class="close-modal" onclick="closeModal('whatsappModal')"
+
+        <button class="close-modal"
+                type="button"
+                onclick="closeModal('whatsappModal')"
                 aria-label="Close">&times;</button>
 
         <h2>WhatsApp Support</h2>
+
         <p>Choose a number to start your conversation.</p>
 
         <a class="phone-link"
-           href="https://wa.me/917791889505?text=Hello%20Shree%20Alankar%20Dresses%2C%20I%20would%20like%20to%20know%20about%20your%20costume%20collections."
-           target="_blank" rel="noopener">
-            <span>+91 77918 89505<br>Main Helpline & Orders</span>
-            <i class="fa-brands fa-whatsapp"></i>
+           href="https://wa.me/917791889505?text=Hello%20Shree%20Alankar%20Dresses%2C%20I%20would%20like%20to%20know%20about%20your%20costume%20collections"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <span>
+                +91 77918 89505<br>
+                Main Helpline &amp; Orders
+            </span>
+
+            <i class="fa-brands fa-whatsapp"
+               aria-hidden="true"></i>
         </a>
 
         <a class="phone-link"
-           href="https://wa.me/919414720970?text=Hello%20Shree%20Alankar%20Dresses%2C%20I%20would%20like%20to%20know%20about%20your%20costume%20collections."
-           target="_blank" rel="noopener">
-            <span>+91 94147 20970<br>Store Manager / Inquiries</span>
-            <i class="fa-brands fa-whatsapp"></i>
+           href="https://wa.me/919414720970?text=Hello%20Shree%20Alankar%20Dresses%2C%20I%20would%20like%20to%20know%20about%20your%20costume%20collections"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <span>
+                +91 94147 20970<br>
+                Store Manager / Inquiries
+            </span>
+
+            <i class="fa-brands fa-whatsapp"
+               aria-hidden="true"></i>
         </a>
 
         <a class="phone-link"
-           href="https://wa.me/919119338157?text=Hello%20Shree%20Alankar%20Dresses%2C%20I%20would%20like%20to%20know%20about%20your%20costume%20collections."
-           target="_blank" rel="noopener">
-            <span>+91 91193 38157<br>Support & Studio Desk</span>
-            <i class="fa-brands fa-whatsapp"></i>
+           href="https://wa.me/919119338157?text=Hello%20Shree%20Alankar%20Dresses%2C%20I%20would%20like%20to%20know%20about%20your%20costume%20collections"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <span>
+                +91 91193 38157<br>
+                Support &amp; Studio Desk
+            </span>
+
+            <i class="fa-brands fa-whatsapp"
+               aria-hidden="true"></i>
         </a>
+
     </div>
+
 </div>
 
 <!-- CALL MODAL -->
-<div class="modal" id="callModal" role="dialog" aria-modal="true"
-     aria-label="Phone contact options">
+
+<div class="modal"
+     id="callModal"
+     role="dialog"
+     aria-modal="true"
+     aria-label="Phone contact options"
+     aria-hidden="true">
 
     <div class="modal-box">
-        <button class="close-modal" onclick="closeModal('callModal')"
+
+        <button class="close-modal"
+                type="button"
+                onclick="closeModal('callModal')"
                 aria-label="Close">&times;</button>
 
         <h2>Call Our Store</h2>
+
         <p>Choose a number to make a call.</p>
 
         <a class="phone-link" href="tel:+917791889505">
             <span>+91 77918 89505</span>
-            <i class="fa-solid fa-phone"></i>
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
         </a>
 
         <a class="phone-link" href="tel:+919414720970">
             <span>+91 94147 20970</span>
-            <i class="fa-solid fa-phone"></i>
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
         </a>
 
         <a class="phone-link" href="tel:+919119338157">
             <span>+91 91193 38157</span>
-            <i class="fa-solid fa-phone"></i>
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
         </a>
+
     </div>
+
 </div>
 
 <script>
-/*
-  IMPORTANT:
-  Replace GOOGLE_REVIEW_URL with the actual Google Business Profile
-  review link supplied by the business owner.
+/* GOOGLE REVIEW LINK
+   This is currently the supplied Google Maps link.
+   For a direct review-writing page, replace it with the
+   official Google Business Profile review link.
 */
+
 const GOOGLE_REVIEW_URL =
     "https://maps.app.goo.gl/WEnWz1hWL1SfNmwE8";
 
+/* MODALS */
+
+let previouslyFocusedElement = null;
+
 function openModal(id) {
-    document.getElementById(id).classList.add('open');
+    const modal = document.getElementById(id);
+
+    if (!modal) return;
+
+    previouslyFocusedElement = document.activeElement;
+
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+
     document.body.style.overflow = 'hidden';
+
+    const closeButton = modal.querySelector('.close-modal');
+
+    if (closeButton) closeButton.focus();
 }
 
 function closeModal(id) {
-    document.getElementById(id).classList.remove('open');
+    const modal = document.getElementById(id);
+
+    if (!modal) return;
+
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
 
     if (!document.querySelector('.modal.open')) {
         document.body.style.overflow = '';
     }
+
+    if (previouslyFocusedElement) {
+        previouslyFocusedElement.focus();
+        previouslyFocusedElement = null;
+    }
 }
 
 document.querySelectorAll('.modal').forEach(modal => {
+
     modal.addEventListener('click', event => {
         if (event.target === modal) {
             closeModal(modal.id);
         }
     });
+
 });
 
 document.addEventListener('keydown', event => {
+
     if (event.key === 'Escape') {
         document.querySelectorAll('.modal.open').forEach(modal => {
             closeModal(modal.id);
         });
     }
+
 });
 
-/* REVIEW SUGGESTIONS */
+/* TEN REVIEW SUGGESTIONS */
 
 const reviewOptions = document.querySelectorAll('.review-option');
+
 const reviewPreview = document.getElementById('reviewPreview');
+
 const reviewText = document.getElementById('reviewText');
+
 const copyButton = document.getElementById('copyReview');
+
 const submitButton = document.getElementById('submitReview');
+
+const reviewStatus = document.getElementById('reviewStatus');
 
 let selectedReview = -1;
 
+/* Select a suggestion and load it into the editor */
+
 reviewOptions.forEach(option => {
+
     option.addEventListener('click', () => {
+
         selectedReview = Number(option.dataset.review);
 
-        reviewOptions.forEach(item => item.classList.remove('selected'));
+        reviewOptions.forEach(item => {
+
+            item.classList.remove('selected');
+
+            item.setAttribute('aria-pressed', 'false');
+
+            const label = item.querySelector('.select-label');
+
+            label.textContent = 'USE THIS SUGGESTION →';
+
+        });
+
         option.classList.add('selected');
 
-        reviewText.value = option.querySelector('p').textContent.trim();
+        option.setAttribute('aria-pressed', 'true');
+
+        option.querySelector('.select-label').textContent =
+            'SELECTED ✓';
+
+        reviewText.value =
+            option.querySelector('p').textContent.trim();
+
+        reviewStatus.textContent = '';
+
+        copyButton.innerHTML =
+            '<i class="fa-regular fa-copy" aria-hidden="true"></i> Copy Review';
 
         reviewPreview.classList.add('visible');
+
         reviewPreview.scrollIntoView({
-            behavior: 'smooth',
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+                ? 'auto'
+                : 'smooth',
             block: 'nearest'
         });
 
         reviewText.focus({ preventScroll: true });
+
     });
+
 });
 
+/* Reset the copy button when the customer edits the text */
+
+reviewText.addEventListener('input', () => {
+
+    reviewStatus.textContent = '';
+
+    copyButton.innerHTML =
+        '<i class="fa-regular fa-copy" aria-hidden="true"></i> Copy Review';
+
+});
+
+/* COPY REVIEW */
+
 copyButton.addEventListener('click', async () => {
-    if (!reviewText.value.trim()) {
-        alert('Please select or write your review first.');
+
+    const text = reviewText.value.trim();
+
+    if (!text) {
+        reviewStatus.textContent =
+            'Please select a suggestion or write your review first.';
         return;
     }
 
     try {
-        await navigator.clipboard.writeText(reviewText.value.trim());
+
+        if (navigator.clipboard && window.isSecureContext) {
+
+            await navigator.clipboard.writeText(text);
+
+        } else {
+
+            reviewText.focus();
+            reviewText.select();
+
+            const copied = document.execCommand('copy');
+
+            if (!copied) {
+                throw new Error('Copy command unsuccessful');
+            }
+
+        }
+
         copyButton.innerHTML =
-            '<i class="fa-solid fa-check"></i> Copied!';
+            '<i class="fa-solid fa-check" aria-hidden="true"></i> Copied!';
+
+        reviewStatus.textContent =
+            'Review copied. You can paste it wherever you need it.';
 
         setTimeout(() => {
+
             copyButton.innerHTML =
-                '<i class="fa-regular fa-copy"></i> Copy Review';
+                '<i class="fa-regular fa-copy" aria-hidden="true"></i> Copy Review';
+
         }, 1800);
+
     } catch (error) {
+
+        reviewText.focus();
         reviewText.select();
-        alert('Please copy the selected text manually.');
+
+        reviewStatus.textContent =
+            'Text selected. Use Ctrl+C or your device’s Copy option.';
+
     }
+
 });
 
+/* CONTINUE TO GOOGLE REVIEWS */
+
 submitButton.addEventListener('click', () => {
-    if (!reviewText.value.trim()) {
-        alert('Please select or write your review first.');
+
+    const text = reviewText.value.trim();
+
+    if (!text) {
+
+        reviewStatus.textContent =
+            'Please select a suggestion or write your review first.';
+
         return;
+
     }
 
     /*
-      Open Google Reviews in a new tab.
-      The customer must independently confirm their rating
-      and publish their review on Google's platform.
+      Open the supplied Google Maps page.
+
+      This website does not submit or publish a review.
+      Customers choose their own rating and decide whether
+      to post their own genuine review on Google's platform.
     */
-    window.open(GOOGLE_REVIEW_URL, '_blank', 'noopener');
+
+    const googleTab = window.open(
+        GOOGLE_REVIEW_URL,
+        '_blank',
+        'noopener,noreferrer'
+    );
+
+    if (!googleTab) {
+
+        window.location.href = GOOGLE_REVIEW_URL;
+
+    }
+
+    reviewStatus.textContent =
+        'Google Maps is opening. Choose your own rating and submit your review there.';
+
 });
 
 /* DOWNLOAD CONTACT CARD */
 
 function downloadVCard() {
+
     const vCardData = [
         'BEGIN:VCARD',
         'VERSION:3.0',
@@ -1028,21 +1511,36 @@ function downloadVCard() {
         'END:VCARD'
     ].join('\r\n');
 
-    const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8' });
+    const blob = new Blob(
+        [vCardData],
+        { type: 'text/vcard;charset=utf-8' }
+    );
+
     const url = URL.createObjectURL(blob);
+
     const link = document.createElement('a');
 
     link.href = url;
+
     link.download = 'Shree_Alankar_Dresses.vcf';
 
     document.body.appendChild(link);
+
     link.click();
+
     link.remove();
 
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    setTimeout(() => {
+        URL.revokeObjectURL(url);
+    }, 1000);
+
 }
 
-document.getElementById('year').textContent = new Date().getFullYear();
+/* AUTOMATIC COPYRIGHT YEAR */
+
+document.getElementById('year').textContent =
+    new Date().getFullYear();
+
 </script>
 
 </body>
